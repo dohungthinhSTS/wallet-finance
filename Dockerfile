@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM ruby:2.7
+FROM ruby:2.7.2
 
 # Install nodejs
 RUN apt-get update -qq && apt-get install -y nodejs
@@ -24,6 +24,7 @@ RUN gem install bundler:'~> 2.1.4'
 RUN bundle
 
 RUN yarn install
+RUN rails webpacker:install
 
 CMD rails server -b 0.0.0.0
 
