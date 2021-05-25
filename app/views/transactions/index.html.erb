@@ -1,0 +1,35 @@
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-12 col-md-12 mx-auto">
+        <h1 class="text-primary">Transactions</h1>
+
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Transaction Type</td>
+              <th scope="col">Wallet Address</th>
+              <th scope="col">CounterPart Address</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Created At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%@transactions.each do |transaction|%>
+              <tr>
+                <th scope="row"><%= transaction.id %></th>
+                <td><%= transaction.transaction_type.transaction_type %></td>
+                <td><%= transaction.wallet_id %></td>
+                <td><%= transaction.counterpart_id %></td>
+                <td><%= transaction.amount %></td>
+                <td><%= transaction.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </section>
+</main>

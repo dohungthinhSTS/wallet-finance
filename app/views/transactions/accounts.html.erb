@@ -1,0 +1,29 @@
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-10 col-md-12 mx-auto">
+        <h1 class="text-primary">Accounts</h1>
+
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Wallet Id</td>
+              <th scope="col">Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%@sources.each do |source|%>
+              <tr>
+                <th scope="row"><%= source.name %></th>
+                <td><%= source.wallet.hash_address %></td>
+                <td><%= source.wallet.current_balance %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </section>
+</main>
