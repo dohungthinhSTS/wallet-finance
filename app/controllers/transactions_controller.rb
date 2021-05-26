@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
   before_action :load_sources, only: %i[new_deposit new_withdraw new_transfer accounts]
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.all.order(created_at: :desc)
   end
 
   def accounts; end
