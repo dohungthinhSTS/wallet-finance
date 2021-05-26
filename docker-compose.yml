@@ -17,9 +17,7 @@ services:
       - pg_data:/var/lib/postgresql/data/pgdata
 
   web:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: dohungthinhtin/wallet-finance
     ports:
       - '3006:3000'
     environment:
